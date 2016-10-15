@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta name=“robots” content=“noindex,nofollow”><input type="password" name=""/>
+
+        <title>Child adventure</title>
+
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/w3.css" rel="stylesheet">
+        <link href="/static/css/main.css" rel="stylesheet">
+
+        <script src="/static/js/jquery-3.1.0.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/main.js"></script>
+    </head>
+<body>
+    <div class="w3-container-right">
+        <ul class="w3-navbar w3-yellow">
+            <li><a href="#">Регистрация</a></li>
+            <li><a href="#">Логин</a></li>
+        </ul>
+    </div>
+    
+    {% for article in articles %}
+        <p>{{ article.text }}</p>
+    
+    {% endfor %}
+    
+<!--    <div class="row affix-row">
+        <div class="col-sm-3 col-md-2 affix-sidebar">
+    		<div class="sidebar-nav">
+                <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                    <ul class="nav navbar-nav" id="sidenav01">
+                    {% for category in categories %}
+                        <li>
+                            <a href="/category/{{ category.id }}" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
+                                <span class="glyphicon glyphicon-cloud"></span> {{ category.title }} <span class="caret pull-right"></span>
+                            </a>
+                            <div class="collapse" id="toggleDemo" style="height: 0px;">
+                                <ul class="nav nav-list">
+                                {% for subcategory in category.children %}
+                                    <li><a href="/subcategory/{{ subcategory.id }}/">{{ subcategory.title }}</a></li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</div>-->
+
+<!--    <div class="container content">
+        <a href="/age/1" class="btn btn-default btn-circle"><i class="fa fa-user"></i><span class="age-number">0-12</span><br><span class="age-value">месяцев</span></a>
+        <a href="/age/2" class="btn btn-default btn-circle"><i class="fa fa-user"></i><span class="age-number">1-3</span><br><span class="age-value">года</span></a>
+        <a href="/age/3" class="btn btn-default btn-circle"><i class="fa fa-user"></i><span class="age-number">3-5</span><br><span class="age-value">лет</span></a>
+        <a href="/age/4" class="btn btn-default btn-circle"><i class="fa fa-user"></i><span class="age-number">5-7</span><br><span class="age-value">лет</span></a>
+        <a href="/age/5" class="btn btn-default btn-circle"><i class="fa fa-user"></i><span class="age-number">7-9</span><br><span class="age-value">лет</span></a>
+        <a href="/age/6" class="btn btn-default btn-circle"><i class="fa fa-user"></i><span class="age-number">9-14</span><br><span class="age-value">лет</span></a>
+        <a href="/age/" class="btn btn-default btn-circle"><i class="fa fa-user"></i><span class="age-number">14+</span><br><span class="age-value">лет</span></a>
+    </div>-->
+</body>
+</html>
