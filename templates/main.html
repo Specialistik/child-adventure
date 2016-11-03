@@ -1,0 +1,56 @@
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta name=“robots” content=“noindex,nofollow”>
+
+        <title>Child adventure</title>
+
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/w3.css" rel="stylesheet">
+        <link href="/static/css/main.css" rel="stylesheet">
+
+        <script src="/static/js/jquery-3.1.0.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/main.js"></script>
+	{% block head %}
+
+	{% endblock %}
+    </head>
+<body>
+    <div class="container maximum-width">
+        <div class="row btn-group-justified">
+            {% for category in categories %}
+                <div class="dropdown">
+                    <a role="button" data-toggle="dropdown" class="btn btn-warning btn-sm"
+                        data-target="#{{ category.id }}" href="/category/{{ category.id }}" id="menu{{ category.id }}">
+                        {{ category.title }} {% if category.has_children %} <span class="caret"></span> {% endif %}
+                    </a>
+                    {% if category.has_children %}
+                    <ul class="dropdown-menu">
+                        {% for subcategory in category.children %}
+                            {% if subcategory.has_children %}
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a>
+                                    <ul class="dropdown-menu">
+                                        {% for sub2cat in subcategory.children %}
+                                            <li><a href="/category/{{ sub2cat.id }}/{{ sub2cat.url }}">{{ sub2cat.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li><a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

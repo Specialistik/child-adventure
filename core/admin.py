@@ -5,17 +5,17 @@ from core.models import Article, Category, Product
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    fields = ('title', 'keywords', 'description', 'url', 'text')
+    fields = ('title', 'keywords', 'description', 'url', 'text', 'pic')
     list_display = ('title', 'url')
     
     
 class CategoryAdmin(admin.ModelAdmin):
-    fields = ('title', 'keywords', 'description', 'url', 'pid')
+    fields = ('title', 'keywords', 'description', 'url', 'pid', 'pic')
     list_display = ('title', 'url')
     
     
 class ProductAdmin(admin.ModelAdmin):
-    fields = ('title', 'keywords', 'description', 'url', 'pid')
+    fields = ('title', 'keywords', 'description', 'url', 'pid', 'pic')
     list_display = ('title', 'url')
 
 

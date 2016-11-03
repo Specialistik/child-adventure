@@ -21,5 +21,7 @@ from core import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
-    url(r'^category/([0-9]+)/$', views.category_list),
+    url(r'^category/([0-9]+)/([a-zA-Z0-9_\']+)$', views.category),
+    url(r'^product/([0-9]+)/([a-zA-Z0-9_\']+)$', views.product),
+    url(r'^article/([0-9]+)/([a-z0-9_]+)/$', views.article),
 ]
