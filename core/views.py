@@ -23,3 +23,7 @@ def category_items(request, id, url):
 
 def article(request, id, url):
     return render(request, 'article.html', {'categories': Category.objects.filter(pid__isnull=True), 'article': Article.objects.get(pk=id)})
+
+
+def product(request, id, url):
+    return render(request, 'product.html')
