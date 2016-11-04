@@ -3,7 +3,7 @@ from models import Category, Product, Article
 
 
 def index(request):
-    return render(request, 'index.html', {'categories': Category.objects.filter(pid__isnull=True), 'articles': Article.objects.all()})
+    return render(request, 'index.html', {'articles': Article.objects.all()})
     
 
 def category(request, id, url):
@@ -18,12 +18,12 @@ def category_list(request, id, url):
     
     
 def category_items(request, id, url):
-    return render(request, 'category_items.html', {'categories': Product.objects.filter(category=id)})
+    return render(request, 'category_items.html', {'products': Product.objects.filter(category=id)})
 
 
 def article(request, id, url):
-    return render(request, 'article.html', {'categories': Category.objects.filter(pid__isnull=True), 'article': Article.objects.get(pk=id)})
+    return render(request, 'article.html', {'article': Article.objects.get(pk=id)})
 
 
 def product(request, id, url):
-    return render(request, 'product.html')
+    return render(request, 'product.html', {'product': Product.objects.get())
