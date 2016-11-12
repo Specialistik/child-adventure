@@ -47,3 +47,9 @@
 .maximum-width {
     width: 100%;
 }
+
+.upper-menu a {
+    font-size: 12px;
+    margin: 2px;
+    padding: 2px;
+}
