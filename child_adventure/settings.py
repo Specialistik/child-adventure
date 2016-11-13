@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'ckeditor',
+    'django_wysiwyg',
 ]
+
+CKEDITOR_JQUERY_URL = '/static/js/jquery-3.1.0.js'
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 
 MIDDLEWARE_CLASSES = [
 #    'django.middleware.security.SecurityMiddleware',
@@ -121,7 +126,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
-]
+
+STATIC_ROOT =  os.path.join(BASE_DIR, "static")

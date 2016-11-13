@@ -2,7 +2,7 @@
 
 from __future__ import unicode_literals
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 class Substance(models.Model):
     title = models.CharField(max_length=80, null=True, blank=True, verbose_name=u'Заголовок')
@@ -52,7 +52,9 @@ class Product(Substance):
     
 
 class Article(Substance):
-    text = models.TextField(blank=True, verbose_name=u"Текст статьи")
+    #text = models.TextField(blank=True, verbose_name=u"Текст статьи")
+    text = RichTextField()
+    
     pic = models.ImageField(upload_to='media/article', null=True, blank=True)
     
     class Meta:
