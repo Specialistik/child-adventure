@@ -28,7 +28,7 @@ class Substance(models.Model):
 
 class Category(Substance):
     pid = models.ForeignKey("self", null=True, blank=True, verbose_name=u"Родительская категория")
-    pic = models.ImageField(upload_to='media/category', null=True, blank=True)
+    pic = models.ImageField(upload_to='category', null=True, blank=True)
 
     def children(self):
         return Category.objects.filter(pid=self.id)
@@ -46,7 +46,7 @@ class Category(Substance):
 
 class Product(Substance):
     category = models.ForeignKey(Category, verbose_name=u"Категория")
-    pic = models.ImageField(upload_to='media/product', null=True, blank=True)
+    pic = models.ImageField(upload_to='product', null=True, blank=True)
     
     class Meta:
         db_table = 'products'
@@ -56,7 +56,7 @@ class Product(Substance):
 
 class Article(Substance):
     text = RichTextField()
-    pic = models.ImageField(upload_to='media/article', null=True, blank=True)
+    pic = models.ImageField(upload_to='article', null=True, blank=True)
     
     class Meta:
         db_table = 'articles'

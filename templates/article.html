@@ -1,5 +1,6 @@
 {% extends "main.html" %}
     {% block content %}
         <h1>{{ article.title }}</h1>
+	<a href='/article/{{ article.id }}/{{ article.url }}'> <img src='/{{ article.pic }}'</a>	
         <p> {{ article.text }}</p>
     {% endblock %}
