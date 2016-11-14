@@ -11,7 +11,7 @@ class Substance(models.Model):
     url = models.CharField(max_length=80, null=True, blank=True, verbose_name=u'Человеко-понятный URL')
     
     def get_pic(self, width=350, height=200):
-        return self.pic if self.pic else '/static/images/no_pic.jpg'
+        return self.pic if self.pic else '/static/images/no_pic.png'
 
     def __repr__(self):
         return self.title if self.title is not None else u'empty'
