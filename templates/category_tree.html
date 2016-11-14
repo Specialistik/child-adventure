@@ -7,34 +7,34 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid upper-menu">
             <ul class="nav navbar-nav">
-            {% for category in categories %}
-                <li>
-                <div class="dropdown">
-                    <a role="button" data-toggle="dropdown" class="btn btn-warning btn-sm"
-                        data-target="#{{ category.id }}" href="/category/{{ category.id }}" id="menu{{ category.id }}">
-                        {{ category.title }} {% if category.has_children %} <span class="caret"></span> {% endif %}
-                    </a>
-                    {% if category.has_children %}
-                    <ul class="dropdown-menu">
-                        {% for subcategory in category.children %}
-                            {% if subcategory.has_children %}
-                                <li class="dropdown-submenu">
-                                    <a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a>
-                                    <ul class="dropdown-menu">
-                                        {% for sub2cat in subcategory.children %}
-                                            <li><a href="/category/{{ sub2cat.id }}/{{ sub2cat.url }}">{{ sub2cat.title }}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                </li>
-                            {% else %}
-                                <li><a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </div>
-                </li>
-            {% endfor %}
-            </ul>
-        </div>
+		    {% for category in categories %}
+			<li>
+			<div class="dropdown">
+			    <a role="button" data-toggle="dropdown" class="btn btn-warning btn-sm"
+				data-target="#{{ category.id }}" href="/category/{{ category.id }}" id="menu{{ category.id }}">
+				{{ category.title }} {% if category.has_children %} <span class="caret"></span> {% endif %}
+			    </a>
+			    {% if category.has_children %}
+			    <ul class="dropdown-menu">
+				{% for subcategory in category.children %}
+				    {% if subcategory.has_children %}
+					<li class="dropdown-submenu">
+					    <a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a>
+					    <ul class="dropdown-menu">
+						{% for sub2cat in subcategory.children %}
+						    <li><a href="/category/{{ sub2cat.id }}/{{ sub2cat.url }}">{{ sub2cat.title }}</a></li>
+						{% endfor %}
+					    </ul>
+					</li>
+				    {% else %}
+					<li><a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a></li>
+				    {% endif %}
+				{% endfor %}
+			    </ul>
+			{% endif %}
+			</div>
+		    </li>
+		{% endfor %}
+	    </ul>
+	</div>
     </nav>

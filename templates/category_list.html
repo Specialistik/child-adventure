@@ -1,5 +1,18 @@
 {% extends "main.html" %}
-    {% block content %}
-        <h1>{{ article.title }}</h1>
-        <p> {{ article.text }}</p>
-    {% endblock %}
+{% block content %}
+	<div class="container">
+	    <div class='row'>
+		{% for cat in categories %}
+		    <div class="col-xs-3 col-sm-3">
+			<a href='/category/{{ cat.id }}/{{ cat.url }}'>
+			   <img src="{{ cat.image }}"> 
+			   <h3> {{ cat.title }} </h3>
+			</a>
+		    </div>
+		    {% if forloop.counter|divisibleby:4 %}
+                        </div><div class="row">
+                    {% endif %}
+		{% endfor %}
+	    </div>
+	</div>
+{% endblock %}

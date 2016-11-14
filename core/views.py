@@ -14,7 +14,7 @@ def category(request, id, url):
 
 
 def category_list(request, id, url):
-    return render(request, 'category_list.html', {'categories': Category.objects.filter(category=id)})
+    return render(request, 'category_list.html', {'categories': Category.objects.filter(pid=id)})
     
     
 def category_items(request, id, url):
@@ -26,4 +26,4 @@ def article(request, id, url):
 
 
 def product(request, id, url):
-    return render(request, 'product.html', {'product': Product.objects.get()})
+    return render(request, 'product.html', {'product': Product.objects.get(pk=id)})
