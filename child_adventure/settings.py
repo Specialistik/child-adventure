@@ -1,3 +1,6 @@
+#coding: utf-8
+
+
 """
 Django settings for child_adventure project.
 
@@ -86,7 +89,6 @@ DATABASES = {
         'USER': 'root',
 	'PASSWORD': '1f53601c',
 	'HOST': 'localhost'
-
     }
 }
 

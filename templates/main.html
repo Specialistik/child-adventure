@@ -18,16 +18,16 @@
 	{% endblock %}
     </head>
 <body>
-    {% include "category_tree_rendered.html" %}
+    {% include "cached/category_tree_rendered.html" %}
     {% block content %}
 
     {% endblock %}
-    
+ {% comment %}   
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
     	<div class="modal-content">
       		<div class="modal-body login-modal">
-      			<p>Anima - это платформа для обучающих видео, призванная помочь тем, кто желает развиваться в творчестве и не только</p>
+      			<p>Child adventure - is an aggregator of internet goods for children, designed to choose the most convenient and cheap goods for your kids</p>
       			<br/>
       			<div class="clearfix"></div>
       			<div id='social-icons-conatainer'>
@@ -67,6 +67,6 @@
     	</div>
   	</div>
 </div>
-
+{% endcomment %}
 </body>
 </html>

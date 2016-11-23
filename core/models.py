@@ -9,6 +9,7 @@ class Substance(models.Model):
     keywords = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'Ключевые слова')
     description = models.CharField(max_length=200, null=True, blank=True, verbose_name=u'Описание')
     url = models.CharField(max_length=80, null=True, blank=True, verbose_name=u'Человеко-понятный URL')
+    exist = models.BooleanField(default=True, verbose_name=u'purpose is to trace the unexisting ones')
     
     def get_pic(self, width=350, height=200):
         return self.pic if self.pic else '/static/images/no_pic.png'

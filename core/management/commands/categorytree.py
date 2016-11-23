@@ -12,6 +12,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         template_path = os.path.join(settings.BASE_DIR, "templates", "category_tree.html")
-        rendered_path = os.path.join(settings.BASE_DIR, "templates", "category_tree_rendered.html")
+        rendered_path = os.path.join(settings.BASE_DIR, "templates", "cached", "category_tree_rendered.html")
         io.open(rendered_path, 'w', encoding='utf8').write(render_to_string(template_path, {'categories': Category.objects.filter(pid__isnull=True)}))
             
